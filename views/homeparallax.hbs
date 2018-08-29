@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<!-- Global site tag (gtag.js) - Google Analytics -->
+
+
+<html lang="en">
+
+<head>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-122680098-1"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', 'UA-122680098-1');
+    </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Jason's Resume</title>
+    <link rel="stylesheet" href="/css/style.css">
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN"
+        crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.css" />
+    <link rel="icon" type="image/png" href="https://cdn3.iconfinder.com/data/icons/glypho-free/64/share-512.png" />
+
+
+</head>
+
+<body>
+    <div class="pimg1">
+        <span></span>
+        <div class="ptext">
+            <span class="border">
+                Jason Kwan
+            </span>
+        </div>
+    </div>
+
+    <section class="section section-dark">
+        <h2>Continuous Learner</h2>
+        <p>
+            Live with the assumption that the only thing you have complete control of is yourself.
+        </p>
+    </section>
+
+    <div class="pimg2">
+        <div class="ptext">
+            <span class="border trans">
+                Study and Practice
+            </span>
+        </div>
+    </div>
+
+    <section class="section section-light">
+        <h2>Experience</h2>
+        <p>
+            During my first programming work experience: I taught myself ReactJS, JSPs and Servlets, familiarize myself with a new IDE
+            NetBeans, develop two airport training applications,
+        </p>
+        <p>
+            modified an existing library to implement extra functions, learned ES5,6,7, created and deployed my first employee production
+            view,
+
+        </p>
+        <p>
+            learned about APIs and how to use them, learned how to utilize a RESTful API on a proxy, testing and troubleshooting Web
+            Services with Fiddler/Postman
+        </p>
+        <p>
+            and most importantly, self-train and research.
+        </p>
+    </section>
+
+    <div class="pimg3">
+        <div class="ptext">
+            <span class="border trans">
+                Creating Value and Results
+            </span>
+        </div>
+    </div>
+
+    <section class="section section-dark">
+        <p>
+            For more detailed information about me, my projects and what I can do for you
+        </p>
+        <p>
+            <h1>
+
+                <a href="/home">Click Here</a>
+            </h1>
+
+        </p>
+    </section>
+
+    <div class="pimg1">
+        {{!--
+        <div class="ptext"> --}} {{!--
+            <p>
+                © 2018
+            </p>
+            <p>
+
+                Jason
+            </p> --}}
+            <div class="container">
+                <h1 class="brand">
+                    <span>Contact me</span>
+                </h1>
+                <div class="wrapper animated bounceInLeft">
+
+                    <div class="company-info bg-dark">
+                        <h3>Jason Web Design</h3>
+                        <ul class="bg-dark">
+                            <li>
+                                <i class="fa fa-linkedin" aria-hidden="true"></i>
+                                <a href="https://www.linkedin.com/in/jkwan34/">LinkedIn</a>
+                            </li>
+                            <li>
+                                <i class="fa fa-envelope"></i> kwanjas0412@gmail.com</li>
+                            <li>
+                                <i class="fa fa-globe" aria-hidden="true"></i>
+                                <a href="/home">Website</a>
+                            </li>
+
+
+
+                        </ul>
+                    </div>
+                    <div class="contact bg-dark">
+                        <h3>Email me</h3>
+                        {{msg}}
+                        <form method="POST" action="send">
+                            <p>
+                                <label>Name</label>
+                                <input type="text" name="name" required>
+                            </p>
+                            <p>
+                                <label>Company</label>
+                                <input type="text" name="company" required>
+                            </p>
+                            <p>
+                                <label>Email Address</label>
+                                <input type="email" name="email" required>
+                            </p>
+                            <p>
+                                <label>Phone Number</label>
+                                <input type="text" name="phone">
+                            </p>
+                            <p class="full">
+                                <label>Message</label>
+                                <textarea name="message" rows="5"></textarea>
+                            </p>
+                            <p class="full">
+                                <button type="submit">Submit</button>
+                            </p>
+                        </form>
+                    </div>
+                </div>
+            </div>
+
+
+            {{!--
+        </div> --}}
+    </div>
+</body>
+
+</html>

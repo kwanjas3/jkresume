@@ -1,0 +1,104 @@
+<script src="https://cdn.rawgit.com/anvaka/panzoom/v4.4.0/dist/panzoom.min.js"></script>
+<style>
+    .section {
+        width: 800px;
+        height: 700px;
+        border: solid black;
+        overflow: auto;
+        float: right;
+    }
+    .aside {
+        width: 300px;
+        height: auto;
+        overflow: auto;
+    }
+    .mapwrap {
+        margin-bottom: 60px;
+        border: 4px solid white;
+        overflow: hidden;
+        width: 800px;
+        height: 600px;
+        background-image: url('./images/cropped.png');
+        background-repeat: no-repeat;
+    }
+    .mapwrap span {
+        width: 25px;
+        height: 10px;
+        margin: 0px;
+        padding: 0px;
+        border: 1px solid black;
+        position: absolute;
+    }
+    img{
+        position: absolute;
+    }
+</style>
+
+<body>
+    <div class="row">
+        <div class="aside col-md-3">
+            <ul class="list-group">
+                <li class="list-group-item" draggable="true" ondragstart="drag(event)">
+                   1  <img id='0' class='a0' src="./images/icon1.png" alt="" srcset="">
+                </li>
+                <li class="list-group-item" draggable="true" ondragstart="drag(event)">2</li>
+                <li class="list-group-item" draggable="true" ondragstart="drag(event)">3</li>
+                <li class="list-group-item" draggable="true" ondragstart="drag(event)">4</li>
+                <li class="list-group-item" draggable="true" ondragstart="drag(event)">5</li>
+            </ul>
+        </div>
+        <div class="section col-md-9">
+            <div class="mapwrap">
+                <div class="row">
+                    <span class="a0" ondrop="drop(event)" ondragover="allowDrop(event)"
+                    style="position: absolute; left: 355px; top: 180px;"
+                    ></span>
+                    <span class="a1" ondrop="drop(event)" ondragover="allowDrop(event)"></span>
+                    <span class="a2" ondrop="drop(event)" ondragover="allowDrop(event)"></span>
+                    <span class="a3" ondrop="drop(event)" ondragover="allowDrop(event)"></span>
+                    <span class="a4" ondrop="drop(event)" ondragover="allowDrop(event)"></span>
+                    <span class="a5" ondrop="drop(event)" ondragover="allowDrop(event)"></span>
+                    <span class="a6" ondrop="drop(event)" ondragover="allowDrop(event)"></span>
+                    <span class="a7" ondrop="drop(event)" ondragover="allowDrop(event)"></span>
+                    <span class="a8" ondrop="drop(event)" ondragover="allowDrop(event)"></span>
+                    <span class="a9" ondrop="drop(event)" ondragover="allowDrop(event)"></span>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
+<script>
+    var area = document.querySelector('.mapwrap')
+    panzoom(area, {
+        maxZoom: 10,
+        minZoom: 0.1
+    }).zoomAbs(
+        0, // initial x position
+        0, // initial y position
+        1  // initial zoom 
+    );
+/////////////////////////////// checking for matching
+    var checkClass = "";
+    function allowDrop(ev) {
+        ev.preventDefault();
+    }
+    function drag(ev) {
+        //console.log(ev)
+        checkClass = ev.target.classList[0];
+        //console.log(checkClass)
+        ev.dataTransfer.setData("text", ev.target.id);
+    }
+    function drop(ev) {
+        ev.preventDefault();
+        //console.log(checkClass)
+        // console.log(ev.target.classList[0])
+        if (checkClass === ev.target.classList[0]) {
+            var data = ev.dataTransfer.getData("text");    
+            ev.target.appendChild(document.getElementById(data));
+            ev.target.childNodes[0].style.width = '25px'
+            ev.target.childNodes[0].style.height = 'auto'
+        }
+    }
+</script>
